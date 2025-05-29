@@ -1,6 +1,22 @@
-const TodoFilter = ({ filteredActionBtn, handleFilterTodos, className }) => {
+import { motion } from 'motion/react';
+
+const TodoFilter = ({
+  filteredActionBtn,
+  handleFilterTodos,
+  className,
+  initial,
+  animate,
+  transition,
+  // whileInView,
+}) => {
   return (
-    <div className={`${className} `}>
+    <motion.div
+      initial={initial}
+      animate={animate}
+      // whileInView={whileInView}
+      transition={transition}
+      className={`${className} `}
+    >
       <li className={`${filteredActionBtn('All')}`}>
         <button onClick={() => handleFilterTodos('All')}>All</button>
       </li>
@@ -12,7 +28,7 @@ const TodoFilter = ({ filteredActionBtn, handleFilterTodos, className }) => {
           Completed
         </button>
       </li>
-    </div>
+    </motion.div>
   );
 };
 
