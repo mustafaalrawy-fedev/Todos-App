@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+/* Start Global Styles */
+/* Start Variables */
+@theme {
+  /* Colors */
+
+  /* Primary */
+
+  --color-caret-blue: hsl(220, 98%, 61%);
+
+  /* --check-background: linear-gradient (to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)); */
+  --color-from-gradient: hsl(280, 87%, 65%);
+  --color-to-gradient: hsl(192, 100%, 67%);
+
+  /* Neutral */
+
+  /* Light Theme */
+  --color-white-color: hsl(0, 0%, 100%);
+
+  --color-light-main-color: hsl(0, 0%, 98%);
+  --color-todos-border-color: hsl(236, 33%, 92%);
+  --color-drag-and-drop-color: hsl(236, 9%, 61%);
+  --color-main-text-color: hsl(235, 19%, 35%);
+  --color-light-grayish-blue: hsl(233, 11%, 84%);
+
+  /* Dark Theme */
+
+  --color-dark-main-color: hsl(235, 21%, 11%);
+  --color-dark-completed-todo-color: hsl(233, 14%, 35%);
+  --color-dark-todos-border-color: hsl(237, 14%, 26%);
+  --color-todos-bg-color: hsl(232, 23%, 19%);
+
+  --color-light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --color-dark-main-text-color: hsl(234, 39%, 85%);
+  /* --color-dark-completed-todo-color: hsl(234, 11%, 52%); */
+  --color-dark-drag-and-drop-color: hsl(236, 9%, 61%);
+
+  /* Typography */
+  --text-main-size: 18px;
+  /* --font-main-weight: 400;
+  --font-weight-bold: 700; */
+  --default-font-family: 'Josefin Sans', sans-serif;
+  --font-family: 'Josefin Sans', sans-serif;
+  --tracking-main-space: 14px;
+}
+
+@layer utilities {
+  .bg-gradient-check {
+    background-image: linear-gradient(
+      to right,
+      var(--color-from-gradient),
+      var(--color-to-gradient)
+    );
+  }
+}
+@layer components {
+  .container {
+    @apply min-w-full px-5 md:px-40 lg:px-60 xl:px-72;
+  }
+  .input {
+    @apply outline-none border-none focus:outline-none focus:border-none text-lg;
+  }
+}
+
+/* End Variables */
+html,
+body {
+  scroll-behavior: smooth;
+}
+ul,
+li {
+  list-style: none;
+}
+button {
+  @apply outline-none cursor-pointer;
+}
+/* Theme Toggle */
+html.dark {
+  @apply bg-dark-main-color  text-main-text-color; /* Ensure dark mode styles are applied */
+}
+
+html.light {
+  @apply bg-light-main-color text-dark-main-text-color; /* Ensure light mode styles are applied */
+}
+
+/* End Global Styles */
