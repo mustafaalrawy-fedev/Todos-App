@@ -8,6 +8,7 @@ import TodoStatus from '../layout/TodoStatus';
 import TodoFilter from '../layout/TodoFilter';
 import TodoForm from '../layout/TodoForm';
 import Toast from '../components/Toast';
+import DragAndDrop from './DragAndDrop';
 
 const TodoApp = () => {
   const { theme, toggleTheme } = useTheme();
@@ -101,15 +102,16 @@ const TodoApp = () => {
           </article>
           {/* Items Filter */}
           <TodoFilter
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            // whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
             filteredActionBtn={filteredActionBtn}
             handleFilterTodos={handleFilterTodos}
             className={`sm:hidden flex gap-5 items-center justify-center ${todoListBgColor}  mt-4 px-5 py-3 rounded-md shadow-xl text-xs sm:text-sm`}
           />
-          <main
-            className={`flex justify-center items-center text-center mt-5 px-5 h-20 text-xs sm:text-sm ${dragAndDropColor} font-bold`}
-          >
-            <p>Drag and drop to reorder list</p>
-          </main>
+          {/* Drag And Drop */}
+          <DragAndDrop dragAndDropColor={dragAndDropColor} />
         </aside>
       </div>
       <Toast color={toastStatus} message={toastMsg} setToastMsg={setToastMsg} />
