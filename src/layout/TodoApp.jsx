@@ -2,7 +2,7 @@ import Image from '../components/Image';
 import useTheme from '../hooks/useTheme';
 import useTodoActions from '../data/todoActions';
 import stylesToggle from '../data/styles';
-import Header from '../layout/header';
+import Header from '../layout/Header';
 import TodoList from '../layout/TodoList';
 import TodoStatus from '../layout/TodoStatus';
 import TodoFilter from '../layout/TodoFilter';
