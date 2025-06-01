@@ -18,10 +18,10 @@ const Toast = ({ color, message, setToastMsg }) => {
   const toastClasses = `fixed top-5 right-5 px-5 py-2 rounded-md shadow-md text-white h-fit w-fit`;
 
   const toastColor = {
-    success: 'border border-green-500 text-green-500 bg-white',
-    error: 'border border-red-500 text-red-500 bg-white',
-    info: 'border border-sky-500 text-sky-500 bg-white',
-    warning: 'border border-orange-500 text-orange-500 bg-white',
+    success: 'border-2 border-green-500 text-green-500 bg-white',
+    error: 'border-2 border-red-500 text-red-500 bg-white',
+    info: 'border-2 border-sky-500 text-sky-500 bg-white',
+    warning: 'border-2 border-orange-500 text-orange-500 bg-white',
   };
 
   return (
