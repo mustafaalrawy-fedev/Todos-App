@@ -15,7 +15,7 @@ const Toast = ({ color, message, setToastMsg }) => {
     }
   }, [message, setToastMsg]);
 
-  const toastClasses = `fixed top-5 right-5 px-5 py-2 rounded-md shadow-md text-white h-fit w-fit`;
+  const toastClasses = `fixed top-5 right-5 px-5 py-2 rounded-md shadow-md h-fit w-fit`;
 
   const toastColor = {
     success: 'border-2 border-green-500 text-green-500 bg-white',
